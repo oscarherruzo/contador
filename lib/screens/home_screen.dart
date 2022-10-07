@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
             Text('Numero de clicks', style: miEstilo,),
-            Text('', style: TextStyle(fontSize: 30),),
+            Text('0', style: TextStyle(fontSize: 30),),
           ],
         ),
     ),
