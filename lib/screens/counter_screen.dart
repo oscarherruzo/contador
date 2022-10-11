@@ -27,48 +27,59 @@ class _counter_screenState extends State<counter_screen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  <Widget>[
             const Text('Numero de clicks', style: miEstilo,),
-            Text('$contador', style: TextStyle(fontSize: 30),),
+            Text('$contador', style: miEstilo),
           ],
         ),
     ),
 
 
-    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
     //Primer boton
 
-    floatingActionButton: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
+    floatingActionButton: const tresBotonesWidgetPersonalizado(),
+    );
+  }
+}
+
+// ignore: camel_case_types
+class tresBotonesWidgetPersonalizado extends StatelessWidget {
+  const tresBotonesWidgetPersonalizado({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const[
         FloatingActionButton(
-          child: const Icon(Icons.add ),
-          onPressed: () {
-            contador++;
-            setState(() {});
-            },
+          onPressed: null,
+          child: Icon(Icons.add ),
+          
           ),
 
 
     //Segundo boton
 
+      
 
-           FloatingActionButton(
-          child: const Icon(Icons.remove ),
-          onPressed: () {
-            contador--;
-            setState(() {});
-            },
+          FloatingActionButton(
+          onPressed: null,
+          child: Icon(Icons.remove ),
+          
           ),  
     //Tercer boton
+
+   
+
           FloatingActionButton(
-          child: const Icon(Icons.recycling ),
-          onPressed: () {
-            contador=0;
-            setState(() {});
-            },
+          onPressed:null,
+          child: Icon(Icons.recycling ),
+          
           ),  
 
       ],
-    ),
     );
   }
 }
